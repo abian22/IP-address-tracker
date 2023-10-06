@@ -1,0 +1,20 @@
+.contenedor-principal {
+  position: relative; /* Asegura que .leaflet-container se posicione en relación con este contenedor */
+  height: 100vh;
+}
+
+@media (min-width: 375px) {
+  .leaflet-container {
+    position: absolute;
+    width: 100vw;
+    height: 70vh;
+    margin-top: 40px;
+    bottom: 0;
+  }
+}
+.backgroundMobile {
+  width:100vw
+}
+body {
+  margin: 0;
+}
