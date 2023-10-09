@@ -1,7 +1,9 @@
 .title {
-    font-family: medium;
+    font-family: bold;
     font-size: 10px;
     color: hsl(0, 0%, 59%);
+    word-spacing: 2px;
+    letter-spacing: 1.4px;
  
   }
   
