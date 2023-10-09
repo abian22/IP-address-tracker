@@ -10,7 +10,7 @@ function IpInfo() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "90vh",
+          marginTop:"250px"
 
         }}
       >
@@ -28,12 +28,12 @@ function IpInfo() {
             borderRadius: "10px",
           }}
         >
-          <span className="title">IP ADDRESS</span>
-          <p className="content">192.212.174.101</p>
-          <span className="title">LOCATION</span>
-          <p className="content">Brooklyn, NY 10001</p>
-          <span className="title">TIMEZONE</span>
-          <p className="content">UTC-05:00</p>
+      <span className="title" style={{ margin: "5px 0" }}>IP ADDRESS</span>
+          <p className="content" s>192.212.174.101</p>
+          <span className="title" style={{ margin: "5px 0", }}>LOCATION</span>
+          <p className="content" >Brooklyn, NY 10001</p>
+          <span className="title" style={{ margin: "5px 0" }}>TIMEZONE</span>
+          <p className="content" >UTC-05:00</p>
           <span className="title">ISP</span>
           <p className="content">SpaceX Starlink</p>
         </div>

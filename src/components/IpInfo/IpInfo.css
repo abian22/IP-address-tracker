@@ -1,11 +1,13 @@
 .title {
     font-family: medium;
-    font-size: 12px;
+    font-size: 10px;
     color: hsl(0, 0%, 59%);
-    margin-top: 10px;
+ 
   }
   
   .content {
     color: black;
     font-weight: bold;
+    margin: 5px 0;
+    margin-bottom: 10px
   }
