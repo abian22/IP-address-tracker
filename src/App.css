@@ -1,5 +1,20 @@
+@font-face {
+  font-family: "Regular";
+  src: url("./assets/Rubik-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Medium";
+  src: url("./assets/Rubik-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Bold";
+  src: url("./assets/Rubik-Bold.ttf");
+}
+
 .contenedor-principal {
-  position: relative; /* Asegura que .leaflet-container se posicione en relación con este contenedor */
+  position: relative; 
   height: 100vh;
 }
 
@@ -7,14 +22,30 @@
   .leaflet-container {
     position: absolute;
     width: 100vw;
-    height: 70vh;
+    height: 50%;
     margin-top: 40px;
     bottom: 0;
   }
 }
+
 .backgroundMobile {
-  width:100vw
+  width:100%;
+  height: 300px;
+  min-height: 300px;
+  z-index: 999;
 }
+
 body {
   margin: 0;
 }
+
+
+input { 
+  border: 0;
+  outline: none;
+  z-index: 999;
+}
+input::placeholder{
+  font-size: 10px;
+}
+
