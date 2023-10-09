@@ -10,7 +10,7 @@ function IpInfo() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          marginTop:"250px"
+          marginTop:"200px"
 
         }}
       >
