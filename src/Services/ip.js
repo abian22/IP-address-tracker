@@ -1,14 +1,8 @@
 import api from "./config"
-async function getIp(ipAddress, setIpData) {
-    try {
-      const result = await api.get("/", {
-        params: {
-          ipAddress,
-        },
-      });
-      setIpData(result.data); 
-    } catch (error) {
-      console.error("Error al obtener la información de la dirección IP:", error);
-    }
-  }
+async function getIp(ipInfo) {
+
+      // Construye la URL de la API de geolocalización correctamente
+      const result = await api.get();
+      console.log("Respuesta de la API:", result.data);
+}
 export default getIp
