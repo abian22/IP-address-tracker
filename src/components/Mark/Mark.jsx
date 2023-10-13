@@ -9,10 +9,10 @@ const customIcon = new Icon ({
   iconSize: [46,56]
 })
 
-function Mark() {
+function Mark({lat, lng}) {
   return (
     <>
-        <Marker  position={{ lat: '43.7378664', lng: '7.4155527' }} icon={customIcon}/>
+        <Marker  position={{ lat: lat, lng: lng}} icon={customIcon}/>
 
     </>
   )

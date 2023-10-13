@@ -48,7 +48,7 @@ function MapView() {
           url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
-        <Mark/>
+        <Mark lat={lat} lng={lng}/>
       </MapContainer>
     </>
   );
