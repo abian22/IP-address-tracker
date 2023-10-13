@@ -10,7 +10,7 @@ import Mark from "../Mark/Mark";
 function MapView() {
   const [lat, setLat] = useState("");
   const [lng, setLng] = useState("");
-  const [id, setId] = useState("8.8.8.8")
+  const [ip, setIp] = useState("");
   const mapRef = useRef(null);
 
   useEffect(() => {
@@ -19,20 +19,27 @@ function MapView() {
       const longitude = position.coords.longitude;
       setLat(latitude);
       setLng(longitude);
-
-      // Mover el mapa a la nueva posición
-      if (mapRef.current) {
-        mapRef.current.setView([latitude, longitude])
-      }
     });
-    getTheIp()
+    // Obtener la ubicación por IP y actualizar lat, lng e ip
+    getTheIp();
   }, []);
 
+  useEffect(() => {
+    // Mover el mapa a la nueva posición una vez que lat y lng se hayan actualizado
+    if (mapRef.current) {
+      mapRef.current.setView([lat, lng]);
+    }
+  }, [lat, lng]); // La función se ejecutará cuando lat o lng cambien
+
   const getTheIp = async () => {
-      const result = await getIp(id);
-      setId(result)
+    const result = await getIp(ip);
+    setIp(result.data.query);
+    setLat(result.data.lat);
+    setLng(result.data.lon);
   }
-  console.log("esta es la id:" + id)
+
+    console.log("esta es otra lat" + lat)
+  
   
   return (
     <>
