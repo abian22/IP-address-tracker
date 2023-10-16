@@ -22,9 +22,9 @@ function App() {
       const longitude = position.coords.longitude;
       setLat(latitude);
       setLng(longitude);
-      getTheIp();
+      mapRef.current.setView([latitude, longitude])
     });
-  }, []);
+  }, [mapRef]);
 
   // Llama a getTheIp cuando cambia la IP
   useEffect(() => {
@@ -33,28 +33,30 @@ function App() {
 
   const getTheIp = async () => {
     try {
-      const result = await getIp(newIp || ip);
+      const result = await getIp(ip);
       setIp(result.data.query);
-      setLat(result.data.lat);
-      setLng(result.data.lon);
+  
+      if (result.data.lat && result.data.lon) {
+        setLat(result.data.lat);
+        setLng(result.data.lon);
+        mapRef.current.setView([result.data.lat, result.data.lon]);
+      }
+  
       setLocation(result.data.city + " " + result.data.region + " " + result.data.zip);
       setTimezone(result.data.timezone);
       setIsp(result.data.isp);
-      mapRef.current.setView([result.data.lat, result.data.lon]);
-
     } catch (error) {
       console.error("Error al obtener datos de IP:", error);
     }
   }
+  
 
   function searchIp() {
-    // Expresión regular para validar una dirección IP en formato IPv4
     const ipRegex = /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/;
 
     if (ipRegex.test(newIp)) {
       setIp(newIp);
     } else {
-      // Si newIp no es una IP válida, puedes mostrar un mensaje de error o realizar alguna otra acción
       console.error("La IP no es válida");
     }
   }
@@ -75,6 +77,7 @@ function App() {
       </div>
       <IpInfo ip={ip} location={location} timezone={timezone} isp={isp} />
       <MapView lat={lat} lng={lng} mapRef={mapRef} />
+      
     </div>
   );
 }
