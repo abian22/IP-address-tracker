@@ -13,3 +13,7 @@
     margin: 5px 0;
     margin-bottom: 10px
   }
+  
+  .mapa {
+    display: none;
+  }

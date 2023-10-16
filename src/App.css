@@ -102,6 +102,7 @@ body {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   top: -82px;
+  cursor: pointer;
 }
 
 /* Estilo para la imagen de la flecha en el botón de búsqueda */
