@@ -5,6 +5,7 @@ import Mark from "../Mark/Mark";
 
 function MapView({lat, lng, mapRef}) {
 
+
   return (
     <>
       <MapContainer ref={mapRef} center={{ lat: lat, lng: lng }} zoom={13}>
