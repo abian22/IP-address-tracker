@@ -13,7 +13,6 @@ function Mark({lat, lng}) {
   return (
     <>
         <Marker  position={{ lat: lat, lng: lng}} icon={customIcon}/>
-
     </>
   )
 }
